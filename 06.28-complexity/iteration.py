@@ -10,6 +10,9 @@ def fibonacci(n):
     """
     current = previous = None
 
+    # This loop runs n + 1 times, so this function performs
+    #  T(n) = 2 + c * (n + 1) + 1 operations, and has complexity O(n).
+
     for i in range(n + 1):
         if i == 0:
             current = 0
