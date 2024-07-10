@@ -48,7 +48,7 @@ def add(lst, idx, value):
     #       that adding an element to the middle of the list requires shifting
     #       the elements after it "down" in the array.
     #
-    # For i from n to idx + 1, do:
+    # For i from size to idx + 1, do:
     #     Set the element at index i to the element at index i - 1.
     # Set the element at that index in the backing array to the given value.
     # Increment the size.
@@ -56,7 +56,7 @@ def add(lst, idx, value):
 
 
 def remove(lst, idx):
-    # For i from idx to n - 1, do:
+    # For i from idx to size - 1, do:
     #     Set the element at index i to the element at index i + 1.
     # Decrement the size.
     # Return the element that used to be at the given index.
