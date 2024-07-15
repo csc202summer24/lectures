@@ -21,8 +21,11 @@ class Node:
 
 
 def enqueue(queue, value):
-    # Create a new node containing the given value..
-    # If the stack is empty, then:
+    # NOTE: This would be O(1) regardless of whether we added to the head or to
+    #       the tail, since both head and tail are directly accessible...
+    #
+    # Create a new node containing the given value.
+    # If the queue is empty, then:
     #     Set the head to the new node.
     # Else, do:
     #     Set the tail's next to the new node.
@@ -32,12 +35,14 @@ def enqueue(queue, value):
 
 
 def dequeue(queue, value):
-    # If the stack has one element, then:
-    #     Unset the head and tail.
-    # Else, do:
-    #     Set the head to the head's next.
-    # Return the old head's value.
+    # NOTE: ...but removing from the head is O(1) whereas removing from the
+    #       tail is O(n), so the tail has to be the back of the queue.
+    #
+    # Set the head to the head's next.
+    # If the queue is of size 1, then:
+    #     Set the tail to None.
     # Decrement the size.
+    # Return the unlinked node's value.
     pass
 
 
