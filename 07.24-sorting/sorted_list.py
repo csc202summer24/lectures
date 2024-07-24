@@ -13,8 +13,8 @@ class SortedList:
 def insert(lst, value):
     # NOTE: Since the list is backed by an array to support efficient binary
     #       searches, we do need to be able to increase capacity, but we can
-    #       assume that the list is always sorted -- we don't have to move the
-    #       elements around; we just have to move them to a new array.
+    #       assume that the list is always sorted -- we don't have to shuffle
+    #       the elements around; we just have to move them to a new array.
     #
     # If the size is equal to the capacity, then:
     #     Double the capacity.
@@ -24,10 +24,10 @@ def insert(lst, value):
     #
     # NOTE: In order to maintain the sorted properties of the list, rather than
     #       allowing the caller to specify an index, we have to search for the
-    #       appropriate index at which to insert the element. Once we find the
-    #       right index, we still have to shift, so this can just be a linear.
+    #       appropriate index at which to insert the element. We still have to
+    #       shift elements to make space, so this can just be a linear search.
     #
-    # Set an index i to size.
+    # Set an index i to the size.
     # While i > 0 and the element at index i - 1 is > the given value, do:
     #     Set the element at index i to the element at index i - 1.
     #     Decrement i.
