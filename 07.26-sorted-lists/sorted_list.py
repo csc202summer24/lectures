@@ -51,11 +51,50 @@ def find(lst, value):
 
 
 def create(array, size):
-    # NOTE: This is not the most efficient way to sort a list, but with the
-    #       insert function already implemented, an insertion sort is trivial.
-    #
-    # Create a new sorted list.
-    # For i from 0 to size - 1, do:
-    #     Insert the element at index i in the array into the sorted list.
+    # Sort the array.
+    # Create a new sorted list containing the sorted array.
     # Return the sorted list.
+    pass
+
+
+def _merge(array_a, size_a, array_b, size_b):
+    # Create a new array of size size_a + size_b.
+    # Set indices i, j, and k to 0.
+    #
+    # While i < size_a and j < size_b, do:
+    #    If the i'th element of array_a is <= the j'th of array_b, then:
+    #        Set the k'th element of the new array to the i'th of array_a.
+    #        Increment i.
+    #    Else, do:
+    #        Set the k'th element of the new array to the j'th of array_b.
+    #        Increment j.
+    #    Increment k.
+    #
+    # NOTE: Once we exit the main loop, one of the two arrays is empty. Any
+    #       elements leftover in the other array must be both sorted and larger
+    #       than all others; they just need to be added to the end.
+    #
+    # While i < size_a, do:
+    #    Set the k'th element of the new array to the i'th of array_a.
+    #    Increment i and k.
+    #
+    # While j < size_b, do:
+    #    Set the k'th element of the new array to the j'th of array_b.
+    #    Increment j and k.
+    #
+    # Return the new array
+    pass
+
+
+def _sort(array, size):
+    # NOTE: It is possible to write an iterative merge sort, but a recursive
+    #       approach is far more natural: a merge sort naturally involves
+    #       identifying and solving smaller versions of the same problem.
+    #
+    # Create two new arrays, array_a and array_b, of size size / 2.
+    # Copy the first half of the array's elements into array_a.
+    # Copy the second half of the array's elements into array_b.
+    # Recursively sort array_a.
+    # Recursively sort array_b.
+    # Return the result of merging array_a with array_b.
     pass
