@@ -84,7 +84,7 @@ def path(graph, vertex_u, vertex_v):
     #         Set temp to the current vertex's distance plus the i'th value.
     #
     #         If the i'th key is not in the predecessors dictionary or the
-    #          i'th key's distance is less than temp, then:
+    #          i'th key's distance is greater than temp, then:
     #             Insert the i'th key into the predecessors dictionary, mapped
     #              to the current vertex.
     #             Insert the i'th key into the distances dictionary, mapped
